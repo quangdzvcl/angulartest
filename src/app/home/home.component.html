@@ -1,0 +1,7 @@
+      <div class="wrapper-cart">
+            <h1>Shopping Cart</h1>
+            <div *ngIf="isVissible">
+                  <app-product-item [productList] = "products" (dataEvent1) = "handleDelete($event)"></app-product-item>
+            </div>
+          <button (click)="HandleChangeVisible()">cLick meee</button>
+      </div>

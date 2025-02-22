@@ -1,0 +1,23 @@
+<div class="group-cart">
+    <div class="header-cart">
+          <div class="col-1">Image</div>
+          <div class="col-2">Name</div>
+          <div class="col-3">Price</div>
+          <div class="col-4">Action</div>
+    </div>
+    <div class="body-cart">
+          <div class="row-cart" *ngFor="let product of productList">
+                <div class="col-1">
+                      <a [routerLink]="['/detail',product.id]">
+                            <img src="{{product.image}}" width="50px" alt="Giày nike real">
+                      </a> 
+                </div>
+                <div class="col-2">{{product.name| upperCasePipe}}</div>
+                <div class="col-3">{{product.price| currencyPipe}}</div>
+                <div class="col-4" (click)="handleDelete(product.id)">
+                      <img src="assets/images/bin.png" width="50px" alt="Xóa">
+                </div>
+          </div>
+          {{totalPrice}} 
+    </div>
+</div>
